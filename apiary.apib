@@ -1,0 +1,269 @@
+FORMAT: 1A
+HOST: http://polls.apiblueprint.org/
+
+# EMIAS
+
+### Send Collected Data Request [POST]
+
+Запрос для отправки собранных данных на сервер.
+
+
++ Request (application/json)
+
+        {
+            "oms": "1234123412341234",
+            "birth_date": 1566899636, //utc
+            "data": {
+                "steps": { Steps obj},
+                "heart_rate":[
+                        { HeartRate obj}
+                ],
+                "body_temperature":[
+                        { BodyTemperature obj}
+                ],
+                "blood_pressure":[
+                        { BloodPressure obj}
+                ],
+                "blood_glucose":[
+                        { BloodGlucose obj}
+                ],
+                "height": { Height obj},
+                "weight":[
+                        { Weight obj}
+                ],
+                "hydration": { Hydration obj},
+                "activity":[
+                        { Activity obj}
+                ],
+                "sleep": { Activity obj}
+            }
+        }
+
++ Response 200 (application/json)
+
+    + Body
+
+            {
+                "error_code": 0,
+                "erroe_message": null,
+                "success": true,
+            }
+            
++ Response 400 (application/json)
+
+    + Body
+
+            {
+                "error_code": 12,
+                "erroe_message": "Неверный формат поля steps",
+                "success": false,
+            }
+            
+## Steps (object)
+### Properties
++ `source_name`: `cmc stations` (string, optional) 
++ `start_time`: `1435658272` (number, optional) - Time, unix
++ `end_time`: `1435658272` (number, optional) - Time, unix
++ `value`: `16093` (number, optional) - step 
+
+## HeartRate (object)
+### Properties
++ `source_name`: `cmc stations` (string, optional) 
++ `start_time`: `1435658272` (number, optional) - Time, unix
++ `end_time`: `1435658272` (number, optional) - Time, unix
++ `value_max`: `134` (number, optional) - bpm 
++ `value_min`: `120` (number, optional) - bpm 
++ `value_avg`: `125` (number, optional) - bpm 
+
+## BodyTemperature (object)
+### Properties
++ `source_name`: `cmc stations` (string, optional) 
++ `start_time`: `1435658272` (number, optional) - Time, unix
++ `end_time`: `1435658272` (number, optional) - Time, unix
++ `value_max`: `36,8` (number, optional) - celsius 
++ `value_min`: `36,5` (number, optional) - celsius 
++ `value_avg`: `36,6` (number, optional) - celsius 
+
+
+## BloodPressure (object)
+### Properties
++ `source_name`: `cmc stations` (string, optional) 
++ `start_time`: `1435658272` (number, optional) - Time, unix
++ `end_time`: `1435658272` (number, optional) - Time, unix
++ `blood_pressure_systolic_average`: `110.0` (float, optional) - mm hg
++ `blood_pressure_systolic_max`: `110.0` (number, optional) - mm hg
++ `blood_pressure_systolic_min`: `110.0` (number, optional) - mm hg
++ `blood_pressure_diastolic_average`: `70.0` (number, optional) - mm hg
++ `blood_pressure_diastolic_max`: `70.0` (number, optional) - mm hg
++ `blood_pressure_diastolic_min`: `70.0` (number, optional) - mm hg
++ `body_position`: `unset` (string, optional)
++ `blood_pressure_measurement_location`: `unset` (string, optional)
+
+## BloodGlucose (object)
+### Properties
++ `source_name`: `cmc stations` (string, optional) 
++ `start_time`: `1435658272` (number, optional) - Time, unix
++ `end_time`: `1435658272` (number, optional) - Time, unix
++ `value_max`: `16093` (number, optional) - g/mmol
++ `value_min`: `16093` (number, optional) - g/mmol
++ `value_avg`: `16093` (number, optional) - g/mmol
++ `relation_to_sleep`: `unset` (string, optional) 
++ `relation_to_meal`: `unset` (string, optional) 
+
+## Height (object)
+### Properties
++ `source_name`: `cmc stations` (string, optional) 
++ `start_time`: `1435658272` (number, optional) - Time, unix
++ `end_time`: `1435658272` (number, optional) - Time, unix
++ `height`: `1,67` (number, optional) - meter 
+
+## Weight (object)
+### Properties
++ `source_name`: `cmc stations` (string, optional) 
++ `start_time`: `1435658272` (number, optional) - Time, unix
++ `end_time`: `1435658272` (number, optional) - Time, unix
++ `value_max`: `45,6` (number, optional) - kg 
++ `value_min`: `46` (number, optional) - kg
++ `value_avg`: `46,1` (number, optional) - kg 
+
+## Hydration (object)
+### Properties
++ `source_name`: `cmc stations` (string, optional) 
++ `start_time`: `1435658272` (number, optional) - Time, unix
++ `end_time`: `1435658272` (number, optional) - Time, unix
++ `volume`: `0,67` (number, optional) - liter 
+
+## Activity (object)
+### Properties
++ `source_name`: `cmc stations` (string, optional) 
++ `start_time`: `1435658272` (number, optional) - Time, unix
++ `end_time`: `1435658272` (number, optional) - Time, unix
++ `activity`: `run` (enum[string], optional) - enum 
++ `duration`: `27600000` (number, optional) - ms 
++ `num_segments`: `1` (number, optional) - unit 
+
+        **activity**
+        + ActivityType
+            + `AEROBICS`
+            + `ARCHERY`
+            + `BADMINTON`
+            + `BASEBALL`
+            + `BASKETBALL`
+            + `BIATHLON`
+            + `BIKING`
+            + `BIKING_HAND`
+            + `BIKING_MOUNTAIN`
+            + `BIKING_ROAD`
+            + `BIKING_SPINNING`
+            + `BIKING_STATIONARY`
+            + `BIKING_UTILITY`
+            + `BOXING`
+            + `CALISTHENICS`
+            + `CIRCUIT_TRAINING`
+            + `CRICKET`
+            + `CROSSFIT`
+            + `CURLING`
+            + `DANCING`
+            + `DIVING`
+            + `ELEVATOR`
+            + `ELLIPTICAL`
+            + `ERGOMETER`
+            + `ESCALATOR`
+            + `EXTRA_STATUS`
+            + `FENCING`
+            + `FOOTBALL_AMERICAN`
+            + `FOOTBALL_AUSTRALIAN`
+            + `FOOTBALL_SOCCER`
+            + `FRISBEE_DISC`
+            + `GARDENING`
+            + `GOLF`
+            + `GYMNASTICS`
+            + `HANDBALL`
+            + `HIGH_INTENSITY_INTERVAL_TRAINING`
+            + `HIKING`
+            + `HOCKEY`
+            + `HORSEBACK_RIDING`
+            + `HOUSEWORK`
+            + `ICE_SKATING`
+            + `INTERVAL_TRAINING`
+            + `IN_VEHICLE`
+            + `JUMP_ROPE`
+            + `KAYAKING`
+            + `KETTLEBELL_TRAINING`
+            + `KICKBOXING`
+            + `KICK_SCOOTER`
+            + `KITESURFING`
+            + `MARTIAL_ARTS`
+            + `MEDITATION`
+            + `MIXED_MARTIAL_ARTS`
+            + `ON_FOOT`
+            + `OTHER`
+            + `P90X`
+            + `PARAGLIDING`
+            + `PILATES`
+            + `POLO`
+            + `RACQUETBALL`
+            + `ROCK_CLIMBING`
+            + `ROWING`
+            + `ROWING_MACHINE`
+            + `RUGBY`
+            + `RUNNING`
+            + `RUNNING_JOGGING`
+            + `RUNNING_SAND`
+            + `RUNNING_TREADMILL`
+            + `SAILING`
+            + `SCUBA_DIVING`
+            + `SKATEBOARDING`
+            + `SKATING`
+            + `SKATING_CROSS`
+            + `SKATING_INDOOR`
+            + `SKATING_INLINE`
+            + `SKIING`
+            + `SKIING_BACK_COUNTRY`
+            + `SKIING_CROSS_COUNTRY`
+            + `SKIING_DOWNHILL`
+            + `SKIING_KITE`
+            + `SKIING_ROLLER`
+            + `SLEDDING`
+            + `SLEEP`
+            + `SLEEP_AWAKE`
+            + `SLEEP_DEEP`
+            + `SLEEP_LIGHT`
+            + `SLEEP_REM`
+            + `SNOWBOARDING`
+            + `SNOWMOBILE`
+            + `SNOWSHOEING`
+            + `SOFTBALL`
+            + `SQUASH`
+            + `STAIR_CLIMBING`
+            + `STAIR_CLIMBING_MACHINE`
+            + `STANDUP_PADDLEBOARDING`
+            + `STATUS_ACTIVE`
+            + `STATUS_COMPLETED`
+            + `STILL`
+            + `STRENGTH_TRAINING`
+            + `SURFING`
+            + `SWIMMING`
+            + `SWIMMING_OPEN_WATER`
+            + `SWIMMING_POOL`
+            + `TREADMILL`
+            + `TILTING`
+            + `TENNIS`
+            + `TEAM_SPORTS`
+            + `TABLE_TENNIS`
+            + `VOLLEYBALL_INDOOR`
+            + `VOLLEYBALL_BEACH`
+            + `VOLLEYBALL`
+            + `UNKNOWN`
+            + `WINDSURFING`
+            + `WHEELCHAIR`
+            + `WATER_POLO`
+            + `WEIGHTLIFTING`
+            + `WALKING_TREADMILL`
+            + `WALKING_STROLLER`
+            + `WALKING_NORDIC`
+            + `WALKING_FITNESS`
+            + `WALKING`
+            + `WAKEBOARDING`
+            + `YOGA`
+            + `ZUMBA`
