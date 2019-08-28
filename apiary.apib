@@ -61,39 +61,39 @@ HOST: http://polls.apiblueprint.org/
             
 ## Steps (object)
 ### Properties
-+ `source_name`: `cmc stations` (string, optional) 
-+ `start_time`: `1435658272` (number, optional) - Time, unix
-+ `end_time`: `1435658272` (number, optional) - Time, unix
-+ `value`: `16093` (number, optional) - step 
++ `source_name`: `cmc stations` (string, required) 
++ `start_time`: `1435658272` (number, required) - Time, unix
++ `end_time`: `1435658272` (number, require) - Time, unix
++ `value`: `16093` (number, required) - step 
 
 ## HeartRate (object)
 ### Properties
-+ `source_name`: `cmc stations` (string, optional) 
-+ `start_time`: `1435658272` (number, optional) - Time, unix
-+ `end_time`: `1435658272` (number, optional) - Time, unix
++ `source_name`: `cmc stations` (string, required) 
++ `start_time`: `1435658272` (number, required) - Time, unix
++ `end_time`: `1435658272` (number, required) - Time, unix
 + `value_max`: `134` (number, optional) - bpm 
 + `value_min`: `120` (number, optional) - bpm 
-+ `value_avg`: `125` (number, optional) - bpm 
++ `value_avg`: `125` (number, required) - bpm 
 
 ## BodyTemperature (object)
 ### Properties
-+ `source_name`: `cmc stations` (string, optional) 
-+ `start_time`: `1435658272` (number, optional) - Time, unix
-+ `end_time`: `1435658272` (number, optional) - Time, unix
++ `source_name`: `cmc stations` (string, required) 
++ `start_time`: `1435658272` (number, required) - Time, unix
++ `end_time`: `1435658272` (number, required) - Time, unix
 + `value_max`: `36,8` (number, optional) - celsius 
 + `value_min`: `36,5` (number, optional) - celsius 
-+ `value_avg`: `36,6` (number, optional) - celsius 
++ `value_avg`: `36,6` (number, required) - celsius 
 
 
 ## BloodPressure (object)
 ### Properties
-+ `source_name`: `cmc stations` (string, optional) 
-+ `start_time`: `1435658272` (number, optional) - Time, unix
-+ `end_time`: `1435658272` (number, optional) - Time, unix
-+ `blood_pressure_systolic_average`: `110.0` (float, optional) - mm hg
++ `source_name`: `cmc stations` (string, required) 
++ `start_time`: `1435658272` (number, required) - Time, unix
++ `end_time`: `1435658272` (number, required) - Time, unix
++ `blood_pressure_systolic_average`: `110.0` (float, required) - mm hg
 + `blood_pressure_systolic_max`: `110.0` (number, optional) - mm hg
 + `blood_pressure_systolic_min`: `110.0` (number, optional) - mm hg
-+ `blood_pressure_diastolic_average`: `70.0` (number, optional) - mm hg
++ `blood_pressure_diastolic_average`: `70.0` (number, required) - mm hg
 + `blood_pressure_diastolic_max`: `70.0` (number, optional) - mm hg
 + `blood_pressure_diastolic_min`: `70.0` (number, optional) - mm hg
 + `body_position`: `unset` (string, optional)
@@ -101,46 +101,46 @@ HOST: http://polls.apiblueprint.org/
 
 ## BloodGlucose (object)
 ### Properties
-+ `source_name`: `cmc stations` (string, optional) 
-+ `start_time`: `1435658272` (number, optional) - Time, unix
-+ `end_time`: `1435658272` (number, optional) - Time, unix
++ `source_name`: `cmc stations` (string, required) 
++ `start_time`: `1435658272` (number, required) - Time, unix
++ `end_time`: `1435658272` (number, required) - Time, unix
 + `value_max`: `16093` (number, optional) - g/mmol
 + `value_min`: `16093` (number, optional) - g/mmol
-+ `value_avg`: `16093` (number, optional) - g/mmol
++ `value_avg`: `16093` (number, required) - g/mmol
 + `relation_to_sleep`: `unset` (string, optional) 
 + `relation_to_meal`: `unset` (string, optional) 
 
 ## Height (object)
 ### Properties
-+ `source_name`: `cmc stations` (string, optional) 
-+ `start_time`: `1435658272` (number, optional) - Time, unix
-+ `end_time`: `1435658272` (number, optional) - Time, unix
-+ `height`: `1,67` (number, optional) - meter 
++ `source_name`: `cmc stations` (string, required) 
++ `start_time`: `1435658272` (number, required) - Time, unix
++ `end_time`: `1435658272` (number, required) - Time, unix
++ `height`: `1,67` (number, required) - meter 
 
 ## Weight (object)
 ### Properties
-+ `source_name`: `cmc stations` (string, optional) 
-+ `start_time`: `1435658272` (number, optional) - Time, unix
-+ `end_time`: `1435658272` (number, optional) - Time, unix
++ `source_name`: `cmc stations` (string, required) 
++ `start_time`: `1435658272` (number, required) - Time, unix
++ `end_time`: `1435658272` (number, required) - Time, unix
 + `value_max`: `45,6` (number, optional) - kg 
 + `value_min`: `46` (number, optional) - kg
-+ `value_avg`: `46,1` (number, optional) - kg 
++ `value_avg`: `46,1` (number, required) - kg 
 
 ## Hydration (object)
 ### Properties
-+ `source_name`: `cmc stations` (string, optional) 
-+ `start_time`: `1435658272` (number, optional) - Time, unix
-+ `end_time`: `1435658272` (number, optional) - Time, unix
-+ `volume`: `0,67` (number, optional) - liter 
++ `source_name`: `cmc stations` (string, required) 
++ `start_time`: `1435658272` (number, required) - Time, unix
++ `end_time`: `1435658272` (number, required) - Time, unix
++ `volume`: `0,67` (number, required) - liter 
 
 ## Activity (object)
 ### Properties
-+ `source_name`: `cmc stations` (string, optional) 
-+ `start_time`: `1435658272` (number, optional) - Time, unix
-+ `end_time`: `1435658272` (number, optional) - Time, unix
-+ `activity`: `run` (enum[string], optional) - enum 
-+ `duration`: `27600000` (number, optional) - ms 
-+ `num_segments`: `1` (number, optional) - unit 
++ `source_name`: `cmc stations` (string, required) 
++ `start_time`: `1435658272` (number, required) - Time, unix
++ `end_time`: `1435658272` (number, required) - Time, unix
++ `activity`: `run` (enum[string], required) - enum 
++ `duration`: `27600000` (number, required) - ms 
++ `num_segments`: `1` (number, required) - unit 
 
         **activity**
         + ActivityType
