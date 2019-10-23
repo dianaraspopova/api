@@ -2,11 +2,9 @@ FORMAT: 1A
 HOST: http://polls.apiblueprint.org/
 
 # EMIAS
-
 ### Send Collected Data Request [POST]
 
 Запрос для отправки собранных данных на сервер.
-
 
 + Request (application/json)
 
@@ -14,7 +12,9 @@ HOST: http://polls.apiblueprint.org/
             "oms": "1234123412341234",
             "birth_date": 1566899636, //utc
             "data": {
-                "steps": { Steps obj},
+                "steps": [
+                { Steps obj}
+                ],
                 "heart_rate":[
                         { HeartRate obj}
                 ],
@@ -31,11 +31,15 @@ HOST: http://polls.apiblueprint.org/
                 "weight":[
                         { Weight obj}
                 ],
-                "hydration": { Hydration obj},
+                "hydration": [
+                { Hydration obj}
+                ],
                 "activity":[
                         { Activity obj}
                 ],
-                "sleep": { Activity obj}
+                "sleep": [
+                { Activity obj}
+                ]
             }
         }
 
@@ -66,6 +70,7 @@ HOST: http://polls.apiblueprint.org/
 + `start_time`: `1435658272` (number, required) - Time, unix
 + `end_time`: `1435658272` (number, require) - Time, unix
 + `value`: `16093` (number, required) - step 
++ `system_version`: `13.1.2` (string, optional) - system version
 
 ## HeartRate (object)
 ### Properties
@@ -76,6 +81,8 @@ HOST: http://polls.apiblueprint.org/
 + `value_max`: `134` (number, optional) - bpm 
 + `value_min`: `120` (number, optional) - bpm 
 + `value_avg`: `125` (number, required) - bpm 
++ `system_version`: `13.1.2` (string, optional) - system version
++ `condition`: `notSet` (heartRateConditionType, optional) - system version
 
 ## BodyTemperature (object)
 ### Properties
@@ -86,7 +93,7 @@ HOST: http://polls.apiblueprint.org/
 + `value_max`: `36,8` (number, optional) - celsius 
 + `value_min`: `36,5` (number, optional) - celsius 
 + `value_avg`: `36,6` (number, required) - celsius 
-
++ `system_version`: `13.1.2` (string, optional) - system version
 
 ## BloodPressure (object)
 ### Properties
@@ -102,6 +109,7 @@ HOST: http://polls.apiblueprint.org/
 + `blood_pressure_diastolic_min`: `70.0` (number, optional) - mm hg
 + `body_position`: `unset` (string, optional)
 + `blood_pressure_measurement_location`: `unset` (string, optional)
++ `system_version`: `13.1.2` (string, optional) - system version
 
 ## BloodGlucose (object)
 ### Properties
@@ -114,6 +122,8 @@ HOST: http://polls.apiblueprint.org/
 + `value_avg`: `16093` (number, required) - g/mmol
 + `relation_to_sleep`: `unset` (string, optional) 
 + `relation_to_meal`: `unset` (string, optional) 
++ `system_version`: `13.1.2` (string, optional) - system version
++ `meal_time`: `after meals` (MealTimeType, optional)
 
 ## Height (object)
 ### Properties
@@ -122,6 +132,8 @@ HOST: http://polls.apiblueprint.org/
 + `start_time`: `1435658272` (number, required) - Time, unix
 + `end_time`: `1435658272` (number, required) - Time, unix
 + `height`: `1,67` (number, required) - meter 
++ `system_version`: `13.1.2` (string, optional) - system version
+
 
 ## Weight (object)
 ### Properties
@@ -132,6 +144,7 @@ HOST: http://polls.apiblueprint.org/
 + `value_max`: `45,6` (number, optional) - kg 
 + `value_min`: `46` (number, optional) - kg
 + `value_avg`: `46,1` (number, required) - kg 
++ `system_version`: `13.1.2` (string, optional) - system version
 
 ## Hydration (object)
 ### Properties
@@ -140,6 +153,7 @@ HOST: http://polls.apiblueprint.org/
 + `start_time`: `1435658272` (number, required) - Time, unix
 + `end_time`: `1435658272` (number, required) - Time, unix
 + `volume`: `0,67` (number, required) - liter 
++ `system_version`: `13.1.2` (string, optional) - system version
 
 ## Activity (object)
 ### Properties
@@ -150,129 +164,31 @@ HOST: http://polls.apiblueprint.org/
 + `activity`: `run` (enum[string], required) - enum 
 + `duration`: `27600000` (number, required) - ms 
 + `num_segments`: `1` (number, required) - unit 
++ `system_version`: `13.1.2` (string, optional) - system version
 
-        **activity**
-        + ActivityType
-            + `AEROBICS`
-            + `ARCHERY`
-            + `BADMINTON`
-            + `BASEBALL`
-            + `BASKETBALL`
-            + `BIATHLON`
-            + `BIKING`
-            + `BIKING_HAND`
-            + `BIKING_MOUNTAIN`
-            + `BIKING_ROAD`
-            + `BIKING_SPINNING`
-            + `BIKING_STATIONARY`
-            + `BIKING_UTILITY`
-            + `BOXING`
-            + `CALISTHENICS`
-            + `CIRCUIT_TRAINING`
-            + `CRICKET`
-            + `CROSSFIT`
-            + `CURLING`
-            + `DANCING`
-            + `DIVING`
-            + `ELEVATOR`
-            + `ELLIPTICAL`
-            + `ERGOMETER`
-            + `ESCALATOR`
-            + `EXTRA_STATUS`
-            + `FENCING`
-            + `FOOTBALL_AMERICAN`
-            + `FOOTBALL_AUSTRALIAN`
-            + `FOOTBALL_SOCCER`
-            + `FRISBEE_DISC`
-            + `GARDENING`
-            + `GOLF`
-            + `GYMNASTICS`
-            + `HANDBALL`
-            + `HIGH_INTENSITY_INTERVAL_TRAINING`
-            + `HIKING`
-            + `HOCKEY`
-            + `HORSEBACK_RIDING`
-            + `HOUSEWORK`
-            + `ICE_SKATING`
-            + `INTERVAL_TRAINING`
-            + `IN_VEHICLE`
-            + `JUMP_ROPE`
-            + `KAYAKING`
-            + `KETTLEBELL_TRAINING`
-            + `KICKBOXING`
-            + `KICK_SCOOTER`
-            + `KITESURFING`
-            + `MARTIAL_ARTS`
-            + `MEDITATION`
-            + `MIXED_MARTIAL_ARTS`
-            + `ON_FOOT`
-            + `OTHER`
-            + `P90X`
-            + `PARAGLIDING`
-            + `PILATES`
-            + `POLO`
-            + `RACQUETBALL`
-            + `ROCK_CLIMBING`
-            + `ROWING`
-            + `ROWING_MACHINE`
-            + `RUGBY`
-            + `RUNNING`
-            + `RUNNING_JOGGING`
-            + `RUNNING_SAND`
-            + `RUNNING_TREADMILL`
-            + `SAILING`
-            + `SCUBA_DIVING`
-            + `SKATEBOARDING`
-            + `SKATING`
-            + `SKATING_CROSS`
-            + `SKATING_INDOOR`
-            + `SKATING_INLINE`
-            + `SKIING`
-            + `SKIING_BACK_COUNTRY`
-            + `SKIING_CROSS_COUNTRY`
-            + `SKIING_DOWNHILL`
-            + `SKIING_KITE`
-            + `SKIING_ROLLER`
-            + `SLEDDING`
-            + `SLEEP`
-            + `SLEEP_AWAKE`
-            + `SLEEP_DEEP`
-            + `SLEEP_LIGHT`
-            + `SLEEP_REM`
-            + `SNOWBOARDING`
-            + `SNOWMOBILE`
-            + `SNOWSHOEING`
-            + `SOFTBALL`
-            + `SQUASH`
-            + `STAIR_CLIMBING`
-            + `STAIR_CLIMBING_MACHINE`
-            + `STANDUP_PADDLEBOARDING`
-            + `STATUS_ACTIVE`
-            + `STATUS_COMPLETED`
-            + `STILL`
-            + `STRENGTH_TRAINING`
-            + `SURFING`
-            + `SWIMMING`
-            + `SWIMMING_OPEN_WATER`
-            + `SWIMMING_POOL`
-            + `TREADMILL`
-            + `TILTING`
-            + `TENNIS`
-            + `TEAM_SPORTS`
-            + `TABLE_TENNIS`
-            + `VOLLEYBALL_INDOOR`
-            + `VOLLEYBALL_BEACH`
-            + `VOLLEYBALL`
-            + `UNKNOWN`
-            + `WINDSURFING`
-            + `WHEELCHAIR`
-            + `WATER_POLO`
-            + `WEIGHTLIFTING`
-            + `WALKING_TREADMILL`
-            + `WALKING_STROLLER`
-            + `WALKING_NORDIC`
-            + `WALKING_FITNESS`
-            + `WALKING`
-            + `WAKEBOARDING`
-            + `YOGA`
-            + `ZUMBA`
+## Sleep (object)
+### Properties
++ `source_name`: `Google fit` (string, required) 
++ `device_name`: `Omron cs50` (string, optional)
++ `start_time`: `1435658272` (number, required) - Time, unix
++ `end_time`: `1435658272` (number, required) - Time, unix
++ `sleep_type`: `inBed` (SleepType, required) - enum 
++ `system_version`: `13.1.2` (string, optional) - system version
+
+        **mealTime**
+        + MealTimeType
+            + `none`
+            + `beforeMeals`
+            + `afterMeals`
+            
+        **sleepType**
+        + SleepType
+            + `none`
+            + `inBed`
+            + `asSleep`
+            
+        **heartRateCondition**
+        + heartRateConditionType
+            + `active`
+            + `notSet`
+            + `sedentary`
