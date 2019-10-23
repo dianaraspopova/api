@@ -175,6 +175,27 @@ HOST: http://polls.apiblueprint.org/
 + `sleep_type`: `inBed` (SleepType, required) - enum 
 + `system_version`: `13.1.2` (string, optional) - system version
 
+## Sleep (object)
+### Properties
++ `source_name`: `Google fit` (string, required) 
++ `device_name`: `Omron cs50` (string, optional)
++ `start_time`: `1435658272` (number, required) - Time, unix
++ `end_time`: `1435658272` (number, required) - Time, unix
++ `sleep_type`: `inBed` (SleepType, required) - enum 
++ `system_version`: `13.1.2` (string, optional) - system version
+
+## Workout (object)
+### Properties
++ `source_name`: `Google fit` (string, required) 
++ `device_name`: `Omron cs50` (string, optional)
++ `start_time`: `1435658272` (number, required) - Time, unix
++ `end_time`: `1435658272` (number, required) - Time, unix
++ `duration`: `1435658272` (number, required) - Time, unix
++ `total_distance`: `1000` (number, optional) - Meter
++ `total_energy_burned`: `200` (number, required) - kkal
++ `workout_type`: `running` (number, required)
++ `system_version`: `13.1.2` (string, optional) - system version
+
         **mealTime**
         + MealTimeType
             + `none`
@@ -192,3 +213,85 @@ HOST: http://polls.apiblueprint.org/
             + `active`
             + `notSet`
             + `sedentary`
+            
+            
+        **workoutType**
+        + WorkoutType
+            + none
+            + americanFootball
+            + archery
+            + australianFootball
+            + badminton
+            + baseball
+            + basketball
+            + bowling
+            + boxing
+            + climbing
+            + cricket
+            + crossTraining
+            + curling
+            + cycling
+            + dance
+            + danceInspiredTraining
+            + elliptical
+            + equestrianSports
+            + fencing
+            + fishing
+            + functionalStrengthTraining
+            + golf
+            + gymnastics
+            + handball
+            + hiking
+            + hockey
+            + hunting
+            + lacrosse
+            + martialArts
+            + mindAndBody
+            + mixedMetabolicCardioTraining
+            + paddleSports
+            + play
+            + preparationAndRecovery
+            + racquetball
+            + rowing
+            + rugby
+            + running
+            + sailing
+            + skatingSports
+            + snowSports
+            + soccer
+            + softball
+            + squash
+            + stairClimbing
+            + surfingSports
+            + swimming
+            + tableTennis
+            + tennis
+            + trackAndField
+            + traditionalStrengthTraining
+            + volleyball
+            + walking
+            + waterFitness
+            + waterPolo
+            + waterSports
+            + wrestling
+            + yoga
+            + barre
+            + coreTraining
+            + crossCountrySkiing
+            + downhillSkiing
+            + flexibility
+            + highIntensityIntervalTraining
+            + jumpRope
+            + kickboxing
+            + pilates
+            + snowboarding
+            + stairs
+            + stepTraining
+            + wheelchairWalkPace
+            + wheelchairRunPace
+            + taiChi
+            + mixedCardio
+            + handCycling
+            + discSports
+            + fitnessGaming
+            + other
