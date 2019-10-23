@@ -32,16 +32,22 @@ HOST: http://polls.apiblueprint.org/
                         { Weight obj}
                 ],
                 "hydration": [
-                { Hydration obj}
+                        { Hydration obj}
                 ],
                 "activity":[
                         { Activity obj}
                 ],
                 "sleep": [
-                { Sleep obj}
+                        { Sleep obj}
                 ],
                 "workout": [
-                { Workout obj }
+                        { Workout obj }
+                ],
+                "distance_cycling": [
+                        { DistanceCycling obj }
+                ],
+                "distance_swimming": [
+                        { DistanceSwimming obj }
                 ]
             }
         }
@@ -197,6 +203,24 @@ HOST: http://polls.apiblueprint.org/
 + `total_distance`: `1000` (number, optional) - Meter
 + `total_energy_burned`: `200` (number, required) - kkal
 + `workout_type`: `running` (number, required)
++ `system_version`: `13.1.2` (string, optional) - system version
+
+## DistanceCycling (object)
+### Properties
++ `source_name`: `Google fit` (string, required) 
++ `device_name`: `Omron cs50` (string, optional)
++ `start_time`: `1435658272` (number, required) - Time, unix
++ `end_time`: `1435658272` (number, required) - Time, unix
++ `value`: `3000` (number, required) - Meter
++ `system_version`: `13.1.2` (string, optional) - system version
+
+## DistanceSwimming (object)
+### Properties
++ `source_name`: `Google fit` (string, required) 
++ `device_name`: `Omron cs50` (string, optional)
++ `start_time`: `1435658272` (number, required) - Time, unix
++ `end_time`: `1435658272` (number, required) - Time, unix
++ `value`: `3000` (number, required) - Meter
 + `system_version`: `13.1.2` (string, optional) - system version
 
         **mealTime**
