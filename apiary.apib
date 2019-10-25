@@ -167,16 +167,6 @@ HOST: http://polls.apiblueprint.org/
 + `volume`: `0,67` (number, required) - liter 
 + `system_version`: `13.1.2` (string, optional) - system version
 
-## Activity (object)
-### Properties
-+ `source_name`: `Google fit` (string, required) 
-+ `device_name`: `Omron cs50` (string, optional)
-+ `start_time`: `1435658272` (number, required) - Time, unix
-+ `end_time`: `1435658272` (number, required) - Time, unix
-+ `activity`: `run` (enum[string], required) - enum 
-+ `duration`: `27600000` (number, required) - ms 
-+ `num_segments`: `1` (number, required) - unit 
-+ `system_version`: `13.1.2` (string, optional) - system version
 
 ## Sleep (object)
 ### Properties
@@ -184,11 +174,11 @@ HOST: http://polls.apiblueprint.org/
 + `device_name`: `Omron cs50` (string, optional)
 + `start_time`: `1435658272` (number, required) - Time, unix
 + `end_time`: `1435658272` (number, required) - Time, unix
-+ `sleep_type`: `inBed` (SleepType, required) - enum 
++ `sleep_type`: `inBed` (SleepType, optional) - enum 
 + `system_version`: `13.1.2` (string, optional) - system version
 
 
-## Workout (object)
+## Activity (object)
 ### Properties
 + `source_name`: `Google fit` (string, required) 
 + `device_name`: `Omron cs50` (string, optional)
