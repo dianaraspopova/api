@@ -43,10 +43,10 @@ HOST: http://polls.apiblueprint.org/
                 "workout": [
                         { Workout obj }
                 ],
-                "distance_cycling": [
+                "cycling": [
                         { DistanceCycling obj }
                 ],
-                "distance_swimming": [
+                "swimming": [
                         { DistanceSwimming obj }
                 ],
                 "body_mass_index": [
@@ -177,7 +177,6 @@ HOST: http://polls.apiblueprint.org/
 + `sleep_type`: `inBed` (SleepType, optional) - enum 
 + `system_version`: `13.1.2` (string, optional) - system version
 
-
 ## Activity (object)
 ### Properties
 + `source_name`: `Google fit` (string, required) 
@@ -186,8 +185,8 @@ HOST: http://polls.apiblueprint.org/
 + `end_time`: `1435658272` (number, required) - Time, unix
 + `duration`: `1435658272` (number, required) - Time, unix
 + `total_distance`: `1000` (number, optional) - Meter
-+ `total_energy_burned`: `200` (number, required) - kkal
-+ `workout_type`: `running` (number, required)
++ `total_energy_burned`: `200` (number, optional) - kkal
++ `workout_type`: `running` (string, required)
 + `system_version`: `13.1.2` (string, optional) - system version
 
 ## DistanceCycling (object)
