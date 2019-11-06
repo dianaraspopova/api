@@ -13,44 +13,41 @@ HOST: http://polls.apiblueprint.org/
             "birth_date": 1566899636, //utc
             "data": {
                 "steps": [
-                { Steps obj}
+                    { Steps obj }
                 ],
-                "heart_rate":[
-                        { HeartRate obj}
+                "heart_rate": [
+                    { HeartRate obj }
                 ],
-                "body_temperature":[
-                        { BodyTemperature obj}
+                "body_temperature": [
+                    { BodyTemperature obj }
                 ],
-                "blood_pressure":[
-                        { BloodPressure obj}
+                "blood_pressure": [
+                    { BloodPressure obj }
                 ],
-                "blood_glucose":[
-                        { BloodGlucose obj}
+                "blood_glucose": [
+                    { BloodGlucose obj }
                 ],
-                "height": { Height obj},
-                "weight":[
-                        { Weight obj}
+                "height": { Height obj },
+                "weight": [
+                    { Weight obj }
                 ],
                 "hydration": [
-                        { Hydration obj}
-                ],
-                "activity":[
-                        { Activity obj}
+                    { Hydration obj }
                 ],
                 "sleep": [
-                        { Sleep obj}
+                    { Sleep obj }
                 ],
                 "workout": [
-                        { Workout obj }
+                    { Workout obj }
                 ],
                 "cycling": [
-                        { DistanceCycling obj }
+                    { DistanceCycling obj }
                 ],
                 "swimming": [
-                        { DistanceSwimming obj }
+                    { DistanceSwimming obj }
                 ],
                 "body_mass_index": [
-                        { BodyMassIndex obj }
+                    { BodyMassIndex obj }
                 ]
             }
         }
@@ -61,7 +58,7 @@ HOST: http://polls.apiblueprint.org/
 
             {
                 "error_code": 0,
-                "erroe_message": null,
+                "error_message": null,
                 "success": true,
             }
             
@@ -70,8 +67,8 @@ HOST: http://polls.apiblueprint.org/
     + Body
 
             {
-                "error_code": 12,
-                "erroe_message": "Неверный формат поля steps",
+                "error_code": 400,
+                "error_message": "Неверный формат поля steps",
                 "success": false,
             }
             
@@ -79,46 +76,46 @@ HOST: http://polls.apiblueprint.org/
 ### Properties
 + `source_name`: `Google fit` (string, required) 
 + `device_name`: `Omron cs50` (string, optional) 
-+ `start_time`: `1435658272` (number, required) - Time, unix
-+ `end_time`: `1435658272` (number, require) - Time, unix
-+ `value`: `16093` (number, required) - step 
++ `start_time`: `1435658272` (integer, required) - Time, unix
++ `end_time`: `1435658272` (integer, require) - Time, unix
++ `value`: `16093` (integer, required) - step 
 + `system_version`: `13.1.2` (string, optional) - system version
 
 ## HeartRate (object)
 ### Properties
 + `source_name`: `Google fit` (string, required) 
 + `device_name`: `Omron cs50` (string, optional)
-+ `start_time`: `1435658272` (number, required) - Time, unix
-+ `end_time`: `1435658272` (number, required) - Time, unix
-+ `value_max`: `134` (number, optional) - bpm 
-+ `value_min`: `120` (number, optional) - bpm 
-+ `value_avg`: `125` (number, required) - bpm 
++ `start_time`: `1435658272` (integer, required) - Time, unix
++ `end_time`: `1435658272` (integer, required) - Time, unix
++ `value_max`: `134` (integer, optional) - bpm 
++ `value_min`: `120` (integer, optional) - bpm 
++ `value_avg`: `125` (integer, required) - bpm 
 + `system_version`: `13.1.2` (string, optional) - system version
-+ `condition`: `notSet` (heartRateConditionType, optional) - system version
++ `condition`: `NOT_SET` (heartRateConditionType, optional) - system version
 
 ## BodyTemperature (object)
 ### Properties
 + `source_name`: `Google fit` (string, required) 
 + `device_name`: `Omron cs50` (string, optional)
-+ `start_time`: `1435658272` (number, required) - Time, unix
-+ `end_time`: `1435658272` (number, required) - Time, unix
-+ `value_max`: `36,8` (number, optional) - celsius 
-+ `value_min`: `36,5` (number, optional) - celsius 
-+ `value_avg`: `36,6` (number, required) - celsius 
++ `start_time`: `1435658272` (integer, required) - Time, unix
++ `end_time`: `1435658272` (integer, required) - Time, unix
++ `value_max`: `36.8` (real, optional) - celsius 
++ `value_min`: `36.5` (real, optional) - celsius 
++ `value_avg`: `36.6` (real, required) - celsius 
 + `system_version`: `13.1.2` (string, optional) - system version
 
 ## BloodPressure (object)
 ### Properties
 + `source_name`: `Google fit` (string, required) 
 + `device_name`: `Omron cs50` (string, optional)
-+ `start_time`: `1435658272` (number, required) - Time, unix
-+ `end_time`: `1435658272` (number, required) - Time, unix
-+ `blood_pressure_systolic_average`: `110.0` (float, required) - mm hg
-+ `blood_pressure_systolic_max`: `110.0` (number, optional) - mm hg
-+ `blood_pressure_systolic_min`: `110.0` (number, optional) - mm hg
-+ `blood_pressure_diastolic_average`: `70.0` (number, required) - mm hg
-+ `blood_pressure_diastolic_max`: `70.0` (number, optional) - mm hg
-+ `blood_pressure_diastolic_min`: `70.0` (number, optional) - mm hg
++ `start_time`: `1435658272` (integer, required) - Time, unix
++ `end_time`: `1435658272` (integer, required) - Time, unix
++ `blood_pressure_systolic_average`: `110.0` (real, required) - mm hg
++ `blood_pressure_systolic_max`: `110.0` (real, optional) - mm hg
++ `blood_pressure_systolic_min`: `110.0` (real, optional) - mm hg
++ `blood_pressure_diastolic_average`: `70.0` (real, required) - mm hg
++ `blood_pressure_diastolic_max`: `70.0` (real, optional) - mm hg
++ `blood_pressure_diastolic_min`: `70.0` (real, optional) - mm hg
 + `body_position`: `unset` (string, optional)
 + `blood_pressure_measurement_location`: `unset` (string, optional)
 + `system_version`: `13.1.2` (string, optional) - system version
@@ -127,23 +124,23 @@ HOST: http://polls.apiblueprint.org/
 ### Properties
 + `source_name`: `Google fit` (string, required) 
 + `device_name`: `Omron cs50` (string, optional)
-+ `start_time`: `1435658272` (number, required) - Time, unix
-+ `end_time`: `1435658272` (number, required) - Time, unix
-+ `value_max`: `16093` (number, optional) - g/mmol
-+ `value_min`: `16093` (number, optional) - g/mmol
-+ `value_avg`: `16093` (number, required) - g/mmol
++ `start_time`: `1435658272` (integer, required) - Time, unix
++ `end_time`: `1435658272` (integer, required) - Time, unix
++ `value_max`: `16093.0` (real, optional) - g/mmol
++ `value_min`: `16093.0` (real, optional) - g/mmol
++ `value_avg`: `16093.0` (real, required) - g/mmol
 + `relation_to_sleep`: `unset` (string, optional) 
 + `relation_to_meal`: `unset` (string, optional) 
 + `system_version`: `13.1.2` (string, optional) - system version
-+ `meal_time`: `after meals` (MealTimeType, optional)
++ `meal_time`: `AFTER_MEALS` (MealTimeType, optional)
 
 ## Height (object)
 ### Properties
 + `source_name`: `Google fit` (string, required) 
 + `device_name`: `Omron cs50` (string, optional)
-+ `start_time`: `1435658272` (number, required) - Time, unix
-+ `end_time`: `1435658272` (number, required) - Time, unix
-+ `height`: `1,67` (number, required) - meter 
++ `start_time`: `1435658272` (integer, required) - Time, unix
++ `end_time`: `1435658272` (integer, required) - Time, unix
++ `height`: `1,67` (real, required) - meter 
 + `system_version`: `13.1.2` (string, optional) - system version
 
 
@@ -151,20 +148,20 @@ HOST: http://polls.apiblueprint.org/
 ### Properties
 + `source_name`: `Google fit` (string, required) 
 + `device_name`: `Omron cs50` (string, optional)
-+ `start_time`: `1435658272` (number, required) - Time, unix
-+ `end_time`: `1435658272` (number, required) - Time, unix
-+ `value_max`: `45,6` (number, optional) - kg 
-+ `value_min`: `46` (number, optional) - kg
-+ `value_avg`: `46,1` (number, required) - kg 
++ `start_time`: `1435658272` (integer, required) - Time, unix
++ `end_time`: `1435658272` (integer, required) - Time, unix
++ `value_max`: `45.6` (real, optional) - kg 
++ `value_min`: `46.0` (real, optional) - kg
++ `value_avg`: `46.1` (real, required) - kg 
 + `system_version`: `13.1.2` (string, optional) - system version
 
 ## Hydration (object)
 ### Properties
 + `source_name`: `Google fit` (string, required) 
 + `device_name`: `Omron cs50` (string, optional)
-+ `start_time`: `1435658272` (number, required) - Time, unix
-+ `end_time`: `1435658272` (number, required) - Time, unix
-+ `volume`: `0,67` (number, required) - liter 
++ `start_time`: `1435658272` (integer, required) - Time, unix
++ `end_time`: `1435658272` (integer, required) - Time, unix
++ `volume`: `0.67` (real, required) - liter 
 + `system_version`: `13.1.2` (string, optional) - system version
 
 
@@ -172,20 +169,20 @@ HOST: http://polls.apiblueprint.org/
 ### Properties
 + `source_name`: `Google fit` (string, required) 
 + `device_name`: `Omron cs50` (string, optional)
-+ `start_time`: `1435658272` (number, required) - Time, unix
-+ `end_time`: `1435658272` (number, required) - Time, unix
-+ `sleep_type`: `inBed` (SleepType, optional) - enum 
++ `start_time`: `1435658272` (integer, required) - Time, unix
++ `end_time`: `1435658272` (integer, required) - Time, unix
++ `sleep_type`: `IN_BED` (SleepType, optional) - enum 
 + `system_version`: `13.1.2` (string, optional) - system version
 
-## Activity (object)
+## Workout (object)
 ### Properties
 + `source_name`: `Google fit` (string, required) 
 + `device_name`: `Omron cs50` (string, optional)
-+ `start_time`: `1435658272` (number, required) - Time, unix
-+ `end_time`: `1435658272` (number, required) - Time, unix
-+ `duration`: `1435658272` (number, required) - Time, unix
-+ `total_distance`: `1000` (number, optional) - Meter
-+ `total_energy_burned`: `200` (number, optional) - kkal
++ `start_time`: `1435658272` (integer, required) - Time, unix
++ `end_time`: `1435658272` (integer, required) - Time, unix
++ `duration`: `500` (integer, required) - seconds
++ `total_distance`: `1000` (integer, optional) - Meter
++ `total_energy_burned`: `200` (integer, optional) - kkal
 + `workout_type`: `running` (string, required)
 + `system_version`: `13.1.2` (string, optional) - system version
 
@@ -193,18 +190,18 @@ HOST: http://polls.apiblueprint.org/
 ### Properties
 + `source_name`: `Google fit` (string, required) 
 + `device_name`: `Omron cs50` (string, optional)
-+ `start_time`: `1435658272` (number, required) - Time, unix
-+ `end_time`: `1435658272` (number, required) - Time, unix
-+ `value`: `3000` (number, required) - Meter
++ `start_time`: `1435658272` (integer, required) - Time, unix
++ `end_time`: `1435658272` (integer, required) - Time, unix
++ `value`: `3000` (integer, required) - Meter
 + `system_version`: `13.1.2` (string, optional) - system version
 
 ## DistanceSwimming (object)
 ### Properties
 + `source_name`: `Google fit` (string, required) 
 + `device_name`: `Omron cs50` (string, optional)
-+ `start_time`: `1435658272` (number, required) - Time, unix
-+ `end_time`: `1435658272` (number, required) - Time, unix
-+ `value`: `3000` (number, required) - Meter
++ `start_time`: `1435658272` (integer, required) - Time, unix
++ `end_time`: `1435658272` (integer, required) - Time, unix
++ `value`: `3000` (integer, required) - Meter
 + `system_version`: `13.1.2` (string, optional) - system version
 
 
@@ -212,41 +209,108 @@ HOST: http://polls.apiblueprint.org/
 ### Properties
 + `source_name`: `Google fit` (string, required) 
 + `device_name`: `Omron cs50` (string, optional)
-+ `start_time`: `1435658272` (number, required) - Time, unix
-+ `end_time`: `1435658272` (number, required) - Time, unix
-+ `value`: `19.7` (number, required)
++ `start_time`: `1435658272` (integer, required) - Time, unix
++ `end_time`: `1435658272` (integer, required) - Time, unix
++ `value`: `19.7` (real, required)
 + `system_version`: `13.1.2` (string, optional) - system version
 
 
-        **mealTime**
-        + MealTimeType
-            + `none`
-            + `beforeMeals`
-            + `afterMeals`
-            
-        **sleepType**
-        + SleepType
-            + `none`
-            + `inBed`
-            + `asSleep`
-            
-        **heartRateCondition**
-        + heartRateConditionType
-            + `active`
-            + `notSet`
-            + `sedentary`
-            
-            
-        **workoutType**
-        + WorkoutType
-            + none
-            + running 
-            + swimming
-            + yoga
-            + crossfit
-            + volleyball
-            + basketball
-            + tennis
-            + football
-            + dancing
-            + boxing
+**mealTime**
++ MealTimeType
+    + `NONE`
+    + `BEFORE_MEALS`
+    + `AFTER_MEALS`
+    
+**sleepType**
++ SleepType
+    + `NONE`
+    + `IN_BED`
+    + `AS_SLEEP`
+    
+**heartRateCondition**
++ HeartRateConditionType
+    + `ACTIVE`
+    + `NOT_SET`
+    + `SEDENTARY`
+    
+    
+**workoutType**
++ WorkoutType
+    + `NONE`
+    + `AMERICAN_FOOTBALL`
+    + `ARCHERY`
+    + `AUSTRALIAN_FOOTBALL`
+    + `BADMINTON`
+    + `BASEBALL`
+    + `BASKETBALL`
+    + `BOWLING`
+    + `BOXING`
+    + `CLIMBING`
+    + `CRICKET`
+    + `CROSS_TRAINING`
+    + `CURLING`
+    + `CYCLING`
+    + `DANCE`
+    + `DANCE_INSPIRED_TRAINING`
+    + `ELLIPTICAL`
+    + `EQUESTRIAN_SPORTS`
+    + `FENCING`
+    + `FISHING`
+    + `FUNCTIONAL_STRENGTH_TRAINING`
+    + `GOLF`
+    + `GYMNASTICS`
+    + `HANDBALL`
+    + `HIKING`
+    + `HOCKEY`
+    + `HUNTING`
+    + `LACROSSE`
+    + `MARTIAL_ARTS`
+    + `MIND_AND_BODY`
+    + `MIXED_METABOLIC_CARDIO_TRAINING`
+    + `PADDLE_SPORTS`
+    + `PLAY`
+    + `PREPARATION_AND_RECOVERY`
+    + `RACQUETBALL`
+    + `ROWING`
+    + `RUGBY`
+    + `RUNNING`
+    + `SAILING`
+    + `SKATING_SPORTS`
+    + `SNOW_SPORTS`
+    + `SOCCER`
+    + `SOFTBALL`
+    + `SQUASH`
+    + `STAIR_CLIMBING`
+    + `SURFING_SPORTS`
+    + `SWIMMING`
+    + `TABLE_TENNIS`
+    + `TENNIS`
+    + `TRACK_AND_FIELD`
+    + `TRADITIONAL_STRENGTH_TRAINING`
+    + `VOLLEYBALL`
+    + `WALKING`
+    + `WATER_FITNESS`
+    + `WATER_POLO`
+    + `WATER_SPORTS`
+    + `WRESTLING`
+    + `YOGA`
+    + `BARRE`
+    + `CORE_TRAINING`
+    + `CROSS_COUNTRY_SKIING`
+    + `DOWNHILL_SKIING`
+    + `FLEXIBILITY`
+    + `HIGH_INTENSITY_INTERVAL_TRAINING`
+    + `JUMP_ROPE`
+    + `KICKBOXING`
+    + `PILATES`
+    + `SNOWBOARDING`
+    + `STAIRS`
+    + `STEP_TRAINING`
+    + `WHEELCHAIR_WALK_PACE`
+    + `WHEELCHAIR_RUN_PACE`
+    + `TAI_CHI`
+    + `MIXED_CARDIO`
+    + `HAND_CYCLING`
+    + `DISC_SPORTS`
+    + `FITNESS_GAMING`
+    + `OTHER`
