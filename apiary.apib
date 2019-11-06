@@ -9,8 +9,7 @@ HOST: http://polls.apiblueprint.org/
 + Request (application/json)
 
         {
-            "oms": "1234123412341234",
-            "birth_date": 1566899636, //utc
+            "remote_id": "1234123412",
             "data": {
                 "steps": [
                     { Steps obj }
@@ -72,6 +71,31 @@ HOST: http://polls.apiblueprint.org/
                 "success": false,
             }
             
+### Acquire Remote Id [GET]            
+
++ Request `api_url/acquireRemoteId/{oms}/{birth_date}`
+    + oms (string, required, from 16 to 30)
+    + birth_date (integer, required) Time, unix
+
++ Response 200 (application/json)
+
+    + Body
+    
+            {
+                "remote_id": "string" // 10 symbols long
+            }
+            
++ Response 400 (application/json)
+
+    + Body
+    
+            {
+                "error_code": 400,
+                "error_message": "RemoteId does not exist for oms({oms}) and birthDate({birthDate})",
+                "success": false
+            }
+            
+# Types            
 ## Steps (object)
 ### Properties
 + `source_name`: `Google fit` (string, required) 
@@ -130,7 +154,6 @@ HOST: http://polls.apiblueprint.org/
 + `value_min`: `16093.0` (real, optional) - g/mmol
 + `value_avg`: `16093.0` (real, required) - g/mmol
 + `relation_to_sleep`: `unset` (string, optional) 
-+ `relation_to_meal`: `unset` (string, optional) 
 + `system_version`: `13.1.2` (string, optional) - system version
 + `meal_time`: `AFTER_MEALS` (MealTimeType, optional)
 
