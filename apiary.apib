@@ -4,7 +4,8 @@ HOST: http://polls.apiblueprint.org/
 # EMIAS
 ### Send Collected Data Request [POST]
 
-Запрос для отправки собранных данных на сервер. URL: `api_url/api/v1/processTelemetry`
+Запрос для отправки собранных данных на сервер. URL: `api_url/api/v1/processTelemetry`.
+Каждое из полей `data` может не присутствовать в запросе.
 
 + Request (application/json)
 
@@ -82,7 +83,12 @@ HOST: http://polls.apiblueprint.org/
     + Body
     
             {
-                "remote_id": "string" // 10 symbols long
+                "error_code": 0,
+                "error_message": null,
+                "success": true,
+                "data": {
+                    "remote_id": "string" // 10 symbols long
+                }
             }
             
 + Response 400 (application/json)
