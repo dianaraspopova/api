@@ -4,7 +4,7 @@ HOST: http://polls.apiblueprint.org/
 # EMIAS
 ### Send Collected Data Request [POST]
 
-Запрос для отправки собранных данных на сервер.
+Запрос для отправки собранных данных на сервер. URL: `api_url/api/v1/processTelemetry`
 
 + Request (application/json)
 
@@ -73,7 +73,7 @@ HOST: http://polls.apiblueprint.org/
             
 ### Acquire Remote Id [GET]            
 
-+ Request `api_url/acquireRemoteId/{oms}/{birth_date}`
++ Request `api_url/api/v1/acquireRemoteId/{oms}/{birth_date}`
     + oms (string, required, from 16 to 30)
     + birth_date (integer, required) Time, unix
 
