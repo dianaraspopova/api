@@ -72,6 +72,16 @@ HOST: http://polls.apiblueprint.org/
                 "success": false,
             }
             
++ Response 500 (application/json)
+
+    + Body
+            
+            {
+                "error_code": 500,
+                "error_message": "Internal system error",
+                "success": false
+            }
+            
 ### Acquire Remote Id [GET]            
 
 + Request `api_url/api/v1/acquireRemoteId/{oms}/{birth_date}`
@@ -101,6 +111,38 @@ HOST: http://polls.apiblueprint.org/
                 "success": false
             }
             
+            
++ Response 403 (application/json)
+
+    + Body
+            
+            {
+                "error_code": 403,
+                "error_message": "Can't access remote service",
+                "success": false
+            }
+            
++ Response 500 (application/json)
+
+    + Body
+            
+            {
+                "error_code": 500,
+                "error_message": "Internal system error",
+                "success": false
+            }
+        
++ Response 503 (application/json)
+    
+    + Body
+            
+            {
+                "error_code": 503,
+                "error_message": "Remote service unavailable",
+                "success": false
+            }
+
+
 # Types            
 ## Steps (object)
 ### Properties
