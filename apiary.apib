@@ -52,6 +52,7 @@ HOST: http://polls.apiblueprint.org/
             }
         }
 
+Успешно:
 + Response 200 (application/json)
 
     + Body
@@ -62,6 +63,7 @@ HOST: http://polls.apiblueprint.org/
                 "success": true,
             }
             
+Неверный формат запроса:
 + Response 400 (application/json)
 
     + Body
@@ -71,14 +73,26 @@ HOST: http://polls.apiblueprint.org/
                 "error_message": "Неверный формат поля steps",
                 "success": false,
             }
+         
+Не найден remote_id:
++ Response 400 (application/json)
+
+    + Body
             
+            {
+                "error_code": 144,
+                "error_message": "Что-то пошло не так. Попробуйте позже",
+                "success": false
+            }
+
+Внутренняя ошибка:            
 + Response 500 (application/json)
 
     + Body
             
             {
                 "error_code": 500,
-                "error_message": "Internal system error",
+                "error_message": "Что-то пошло не так. Попробуйте позже",
                 "success": false
             }
             
@@ -88,6 +102,7 @@ HOST: http://polls.apiblueprint.org/
     + oms (string, required, from 16 to 30)
     + birth_date (integer, required) Time, unix
 
+Успешно:
 + Response 200 (application/json)
 
     + Body
@@ -97,48 +112,52 @@ HOST: http://polls.apiblueprint.org/
                 "error_message": null,
                 "success": true,
                 "data": {
-                    "remote_id": "string" // 10 symbols long
+                    "remote_id": "string"
                 }
             }
-            
+
+Не найден remote_id на внешнем сервиса
 + Response 400 (application/json)
 
     + Body
     
             {
-                "error_code": 400,
-                "error_message": "RemoteId does not exist for oms({oms}) and birthDate({birthDate})",
+                "error_code": 240,
+                "error_message": "Проверьте правильность ввода номера полиса ОМС и даты рождения",
                 "success": false
             }
             
-            
-+ Response 403 (application/json)
+
+Удаленный сервис требует авторизации:            
++ Response 401 (application/json)
 
     + Body
             
             {
-                "error_code": 403,
-                "error_message": "Can't access remote service",
+                "error_code": 241,
+                "error_message": "Что-то пошло не так. Попробуйте позже",
                 "success": false
             }
-            
+
+Внутренняя ошибка:            
 + Response 500 (application/json)
 
     + Body
             
             {
                 "error_code": 500,
-                "error_message": "Internal system error",
+                "error_message": "Что-то пошло не так. Попробуйте позже",
                 "success": false
             }
-        
+
+Удаленный сервис не выдал ответа за указанное время:
 + Response 503 (application/json)
     
     + Body
             
             {
-                "error_code": 503,
-                "error_message": "Remote service unavailable",
+                "error_code": 253,
+                "error_message": "Что-то пошло не так. Попробуйте позже",
                 "success": false
             }
 
